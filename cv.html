@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV — Franmen Guillermo De Los Santos</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<template id="__bundler_thumbnail" data-bg-color="#f6f5f1">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f6f5f1"/>
+    <rect x="420" y="200" width="360" height="400" rx="12" fill="#ffffff" stroke="#0c9e84" stroke-width="8"/>
+    <text x="600" y="430" text-anchor="middle" font-family="monospace" font-size="96" font-weight="700" fill="#0d1320">CV</text>
+  </svg>
+</template>
+<style>
+  :root {
+    --ink: #131820;
+    --ink-2: #444c58;
+    --ink-3: #7b8390;
+    --accent: #0b8a72;
+    --line: #dcdfe3;
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-body: "Hanken Grotesk", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    background: #e8e7e2; color: var(--ink); font-family: var(--font-body);
+    font-size: 12.5px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 210mm; min-height: 297mm; margin: 28px auto; background: #fff;
+    padding: 16mm 17mm 15mm; box-shadow: 0 18px 50px -18px rgba(20,30,50,.3);
+  }
+
+  /* ---- Barra de acciones (no se imprime) ---- */
+  .actionbar {
+    position: sticky; top: 0; z-index: 10; display: flex; justify-content: center; gap: 12px;
+    padding: 14px; background: rgba(232,231,226,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .actionbar button, .actionbar a {
+    font-family: var(--font-body); font-weight: 600; font-size: 14px; cursor: pointer;
+    padding: 10px 20px; border-radius: 10px; border: 1px solid transparent; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .actionbar .primary { background: var(--accent); color: #fff; }
+  .actionbar .ghost { background: transparent; color: var(--ink); border-color: #c4c8cd; }
+
+  /* ---- Encabezado ---- */
+  .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; padding-bottom: 14px; border-bottom: 2.5px solid var(--ink); }
+  h1 { font-family: var(--font-display); font-size: 27px; font-weight: 700; letter-spacing: -.02em; line-height: 1.08; }
+  .headline { font-family: var(--font-mono); font-size: 11.5px; color: var(--accent); margin-top: 7px; letter-spacing: .01em; }
+  .contact { text-align: right; font-size: 11.5px; color: var(--ink-2); line-height: 1.75; white-space: nowrap; }
+  .contact a { color: var(--ink-2); text-decoration: none; }
+  .contact .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); }
+
+  /* ---- Secciones ---- */
+  .sec { margin-top: 17px; }
+  .sec h2 {
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 500; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 9px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .perfil { font-size: 12.5px; color: var(--ink-2); }
+
+  /* ---- Experiencia ---- */
+  .job { margin-bottom: 12px; break-inside: avoid; }
+  .job-line { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; }
+  .job-role { font-family: var(--font-display); font-weight: 600; font-size: 13.5px; flex: 1; line-height: 1.35; }
+  .job-co { color: var(--accent); font-weight: 600; }
+  .job-when { font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); white-space: nowrap; padding-top: 3px; }
+  .job p { color: var(--ink-2); margin-top: 3px; }
+  .job .tech { font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); margin-top: 4px; }
+
+  /* ---- Dos columnas inferiores ---- */
+  .cols { display: grid; grid-template-columns: 1.25fr 1fr; gap: 26px; }
+
+  .proj { margin-bottom: 9px; break-inside: avoid; }
+  .proj b { font-weight: 600; }
+  .proj .award { color: var(--accent); font-weight: 600; }
+  .proj p { color: var(--ink-2); }
+  .proj .url { font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); }
+
+  .edu { margin-bottom: 8px; }
+  .edu b { font-weight: 600; display: block; }
+  .edu span { color: var(--ink-2); font-size: 11.5px; }
+  .edu .when { font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); }
+
+  .skill-row { margin-bottom: 6px; }
+  .skill-row b { font-weight: 600; font-size: 11.5px; }
+  .skill-row span { color: var(--ink-2); font-size: 11.5px; }
+
+  ul.flat { list-style: none; }
+  ul.flat li { padding-left: 14px; position: relative; color: var(--ink-2); margin-bottom: 4px; }
+  ul.flat li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; }
+    .actionbar { display: none; }
+    .page { margin: 0; box-shadow: none; width: auto; min-height: auto; }
+  }
+  @media (max-width: 760px) {
+    .page { width: 100%; padding: 24px 20px; margin: 0; }
+    .head { flex-direction: column; }
+    .contact { text-align: left; white-space: normal; }
+    .cols { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="actionbar">
+  <button class="primary" onclick="window.print()">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+    Guardar como PDF
+  </button>
+  <a class="ghost" href="index.html">← Volver al sitio</a>
+</div>
+
+<div class="page">
+  <header class="head">
+    <div>
+      <h1>Franmen Guillermo<br />De Los Santos</h1>
+      <div class="headline">Senior Software Engineer · Arquitectura orientada a eventos · JVM</div>
+    </div>
+    <div class="contact">
+      <div>Santo Domingo, República Dominicana</div>
+      <div><a href="mailto:franmen05@gmail.com">franmen05@gmail.com</a></div>
+      <div><a href="https://www.linkedin.com/in/franmen-guillermo-de-los-santos-4773b120">linkedin.com/in/franmen-guillermo-de-los-santos-4773b120</a></div>
+      <div><a href="https://github.com/franmen05">github.com/franmen05</a></div>
+    </div>
+  </header>
+
+  <section class="sec">
+    <h2>Perfil</h2>
+    <p class="perfil">Senior Software Engineer con más de 15 años de experiencia en el análisis, diseño y desarrollo de software empresarial. Especializado en backend sobre la JVM: arquitecturas reactivas orientadas a eventos (<em>Domain Event Design</em>), microservicios con Quarkus, motores de reglas de negocio (Drools, Kogito) y automatización de procesos con BPM (Camunda, jBPM). Pragmático, proactivo y comprometido con la excelencia, con experiencia llevando sistemas desde la factibilidad hasta producción.</p>
+  </section>
+
+  <section class="sec">
+    <h2>Experiencia profesional</h2>
+
+    <div class="job">
+      <div class="job-line">
+        <span class="job-role">Senior Software Developer · <span class="job-co">Claro Dominicana</span></span>
+        <span class="job-when">AGO 2020 — PRESENTE</span>
+      </div>
+      <p>Análisis y diseño de la evolución del sistema de workforce management, bajo Domain Event Design (arquitectura reactiva orientada a eventos), Quarkus y microservicios, alcanzando altos niveles de estabilidad y escalabilidad.</p>
+      <div class="tech">Java · Kotlin · Quarkus · Spring · Kafka · Camunda BPM · Kogito · Oracle · MongoDB · Angular · Docker · OpenShift</div>
+    </div>
+
+    <div class="job">
+      <div class="job-line">
+        <span class="job-role">Senior Software Developer · <span class="job-co">Soluciones GBH</span></span>
+        <span class="job-when">AGO 2019 — AGO 2020</span>
+      </div>
+      <p>Análisis, diseño y desarrollo de proyectos a la medida; destaca la automatización de la aplicación de reglas de negocio mediante el motor de reglas Drools.</p>
+      <div class="tech">Java · Drools · Spring Boot · React · TypeScript · NodeJS · PostgreSQL · Docker</div>
+    </div>
+
+    <div class="job">
+      <div class="job-line">
+        <span class="job-role">Senior Software Developer · <span class="job-co">Altice Dominicana</span></span>
+        <span class="job-when">JUL 2016 — AGO 2019</span>
+      </div>
+      <p>Lideré iniciativas clave: módulo de automatización del proceso de comisiones con jBPM, módulos de extranet e intranet empresarial, y servicios web, microservicios e interfaces entre finanzas y la red móvil.</p>
+      <div class="tech">Oracle · PL/SQL · Spring Boot · Hibernate · jBPM · Liferay · REST · C# · OpenShift · Docker · Linux</div>
+    </div>
+
+    <div class="job">
+      <div class="job-line">
+        <span class="job-role">Senior Programador (externo) · <span class="job-co">Claro</span></span>
+        <span class="job-when">OCT 2015 — JUN 2016</span>
+      </div>
+      <p>Implementación de sistemas empresariales sobre stack Java EE.</p>
+      <div class="tech">JavaEE · Oracle · Spring · Hibernate · Maven</div>
+    </div>
+
+    <div class="job">
+      <div class="job-line">
+        <span class="job-role">Ingeniero de Desarrollo · <span class="job-co">Orange Dominicana</span></span>
+        <span class="job-when">JUL 2011 — MAY 2014</span>
+      </div>
+      <p>Análisis, diseño y desarrollo de la plataforma Workflow basada en jBPM: automatización integral de las políticas de móviles (reserva de equipos, activaciones, cambios de plan, transferencias y cancelaciones). Reconocido por compromiso y responsabilidad como único desarrollador del proyecto Workflow Móviles.</p>
+      <div class="tech">Java · Oracle · Spring · Struts · JSF · JPA · jBPM 3 · JAX-WS · Liferay · JasperReports</div>
+    </div>
+
+    <div class="job">
+      <div class="job-line">
+        <span class="job-role">Analista Programador · <span class="job-co">Innovasat</span></span>
+        <span class="job-when">ENE 2015 — JUN 2015</span>
+      </div>
+      <p>Desarrollo de clientes en Android y servicios de servidor en .Net.</p>
+      <div class="tech">Java Android · C#.Net</div>
+    </div>
+  </section>
+
+  <div class="cols">
+    <div>
+      <section class="sec">
+        <h2>Proyectos destacados</h2>
+        <div class="proj">
+          <b>Medicine Risk Finder</b> — <span class="award">3er lugar, Competencia de desarrollo de Huawei 2020</span>
+          <p>Aplicación para identificar riesgos asociados a medicamentos.</p>
+          <div class="url">github.com/franmen05/medicine-risk-finder</div>
+        </div>
+        <div class="proj">
+          <b>Account Analyzer</b> (2022–2023)
+          <p>Extracción automática de las deducciones bancarias desde estados de cuenta. Java + Quarkus.</p>
+          <div class="url">github.com/franmen05/account-analyzer</div>
+        </div>
+        <div class="proj">
+          <b>Medina Cargo Xpress</b>
+          <p>Diversos desarrollos para la empresa de logística y envíos, incluyendo su presencia web.</p>
+          <div class="url">medinacargoxpress.com</div>
+        </div>
+        <div class="proj">
+          <b>Centro Educativo Los Rosantes</b> (2020)
+          <p>Sitio web institucional del centro educativo.</p>
+          <div class="url">losrosantes.edu.do</div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>Reconocimientos</h2>
+        <ul class="flat">
+          <li>3er lugar — Competencia de desarrollo de Huawei · 2020</li>
+          <li>Excelencia en el desempeño — Altice Dominicana · 2017</li>
+          <li>Compromiso y responsabilidad, proyecto Workflow Móviles — Orange Dominicana · 2014</li>
+        </ul>
+      </section>
+    </div>
+
+    <div>
+      <section class="sec">
+        <h2>Habilidades</h2>
+        <div class="skill-row"><b>Lenguajes &amp; Backend:</b> <span>Java, Kotlin, Spring Boot, Quarkus, Hibernate/JPA, C#/.Net, PL/SQL</span></div>
+        <div class="skill-row"><b>Arquitectura &amp; BPM:</b> <span>Event-Driven, Microservicios, Kafka, Camunda, jBPM, Drools, Kogito, REST/SOAP</span></div>
+        <div class="skill-row"><b>Datos &amp; Frontend:</b> <span>Oracle, MongoDB, PostgreSQL, SQL Server, Angular, React, TypeScript, Android</span></div>
+        <div class="skill-row"><b>DevOps:</b> <span>Docker, OpenShift, Git, Gradle, Maven, JUnit, Cypress, Selenium, Linux</span></div>
+      </section>
+
+      <section class="sec">
+        <h2>Formación académica</h2>
+        <div class="edu"><b>Ingeniero en Sistemas de Información</b><span>Universidad APEC</span> <span class="when">· 2010—2016</span></div>
+        <div class="edu"><b>Tecnólogo en Desarrollo de Software</b><span>ITLA</span> <span class="when">· 2007—2010</span></div>
+        <div class="edu"><b>Técnico en Electrónica</b><span>Politécnico Cardenal Sancha (IPCAS)</span> <span class="when">· 2003—2007</span></div>
+      </section>
+
+      <section class="sec">
+        <h2>Formación continua</h2>
+        <p class="perfil" style="font-size:11.5px">Event-Driven Architecture, Programación Funcional, Quarkus, Kafka, Spring 5, Angular, React, Scrum, SQL Tuning (Oracle University) y +14 cursos especializados.</p>
+      </section>
+
+      <section class="sec">
+        <h2>Idiomas</h2>
+        <ul class="flat">
+          <li>Español — nativo</li>
+          <li>Inglés — competencia básica profesional</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
